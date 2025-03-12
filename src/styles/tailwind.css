@@ -5,6 +5,8 @@
   --color-primary-text: #1E1E1C;
   --color-secondary-text: #253058;
   --color-placeholder-text:#7A7F93; 
+  --color-highlight-text:#D23643; 
+
 }
 
 #root {
