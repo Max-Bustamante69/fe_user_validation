@@ -5,12 +5,13 @@
   --color-primary-text: #1E1E1C;
   --color-secondary-text: #253058;
   --color-placeholder-text:#7A7F93; 
+  --color-drop-shadow: #E3EBFB;
   --color-highlight-text:#D23643; 
+
 
 }
 
-#root {
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+
+*{
+  font-family: "Poppins", sans-serif;
 }
