@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import { documentTypeOptions } from "../utils/constants";
+import { documentTypeOptions } from "../lib/utils/constants";
 
 import "../styles/tailwind.css";
 
