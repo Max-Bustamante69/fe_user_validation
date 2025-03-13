@@ -1,3 +1,7 @@
+@font-face {
+  font-family: Poppins;
+  src: url('../assets/fonts//Poppins-Regular.ttf') format('truetype');
+}
 
 
 @import "tailwindcss";
@@ -9,7 +13,7 @@
   --color-placeholder-text:#7A7F93; 
   --color-drop-shadow: #E3EBFB;
   --color-highlight-text:#D23643; 
-  --font-poppins: "Poppins", sans-serif;
+  --font-poppins: Poppins, sans-serif;
 }
 
 
