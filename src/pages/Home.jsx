@@ -51,7 +51,7 @@ function Home() {
             </li>
           </ul>
         </Card>
-        <Link to={"/didit"}>
+        <Link to={"/terms"}>
           <Button variant={"rounded"} size={"roundLg"}>
             <MdNavigateNext className="w-8 h-8" />
           </Button>
