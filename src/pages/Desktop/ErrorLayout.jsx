@@ -6,7 +6,7 @@ import { Outlet } from "react-router";
 function ErrorLayout({children}) {
   return (
     <motion.div
-      className="flex flex-col items-center gap-12 relative w-full"
+      className="flex flex-col items-center h-full justify-center lg:h-fit gap-12 relative w-full"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
