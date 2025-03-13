@@ -6,7 +6,7 @@ import Card from "@components/Card";
 import { Outlet } from "react-router";
 import { Link } from "react-router";
 
-import "../../styles/tailwind.css";
+import "@styles/tailwind.css";
 
 function Layout() {
   return (
