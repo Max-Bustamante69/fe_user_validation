@@ -1,14 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect, use } from "react";
 import axios from "axios";
 import { documentTypeOptions } from "../lib/utils/constants";
 import { motion } from "framer-motion";
 import InputField from "./InputField"; 
 import Button from "./Button";
 import SelectField from "./SelectField";
+import { useNavigate } from "react-router";
 
 import "../styles/tailwind.css";
 
 function DiditForm() {
+
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -18,6 +22,14 @@ function DiditForm() {
   });
   const [status, setStatus] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    if(status && status.type === "error") {
+      console.log("Redirecting to /failed");
+      navigate("/failed");
+    }
+  }, [status, navigate]);
+
 
   const handleChange = (e) => {
     setFormData({
@@ -59,9 +71,9 @@ function DiditForm() {
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.3 }}
     >
-      <form onSubmit={handleSubmit} className="space-y-5">
-        <div className="grid grid-cols-2 gap-4">
-          <div className="space-y-2">
+      <form onSubmit={handleSubmit} className="space-y-8">
+        <div className="grid grid-cols-2 gap-6">
+         
             <InputField
               label={"First Name"}
               type="text"
@@ -72,9 +84,9 @@ function DiditForm() {
               placeholder="John"
               required
             />
-          </div>
+      
 
-          <div className="space-y-2">
+      
             <InputField
               label={"Last Name"}
               type="text"
@@ -85,10 +97,10 @@ function DiditForm() {
               placeholder="Doe"
               required
             />
-          </div>
+       
         </div>
 
-        <div className="space-y-2">
+
           <InputField
             label={"Document ID"}
             type="text"
@@ -99,9 +111,9 @@ function DiditForm() {
             placeholder="Enter your document ID"
             required
           />
-        </div>
+   
 
-        <div className="space-y-2">
+    
 
           <SelectField
             label={"Document Type"}
@@ -117,27 +129,10 @@ function DiditForm() {
               backgroundRepeat: "no-repeat",
               backgroundPosition: "right 0.5rem center",
             }}
-          ></SelectField>
-        </div>
+          />
+     
 
-        <div className="space-y-2">
-          <SelectField
-          label = "Features"
-            id="features"
-            options = {[{label: "OCR only", value: "OCR"}]}
-            name="features"
-            value={formData.features}
-            onChange={handleChange}
-            style={{
-              backgroundImage:
-                'url(\'data:image/svg+xml;charset=US-ASCII,<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z" fill="%236B7280"/></svg>\')',
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "right 0.5rem center",
-            }}
-          >
-            
-          </SelectField>
-        </div>
+    
 
         <Button
           variant={"primary"}
@@ -177,36 +172,6 @@ function DiditForm() {
           )}
         </Button>
       </form>
-      {status && (
-        <div
-          className={`mt-6 p-4 rounded-lg border ${
-            status.type === "error"
-              ? "bg-red-900/50 border-red-500 text-red-200"
-              : status.type === "processing"
-              ? "bg-blue-900/50 border-blue-500 text-blue-200"
-              : "bg-green-900/50 border-green-500 text-green-200"
-          } transition-all duration-300 animate-fadeIn`}
-        >
-          {status.type === "error" && (
-            <h3 className="font-bold mb-1 flex items-center">
-              <svg
-                className="w-5 h-5 mr-1.5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
-                  clipRule="evenodd"
-                ></path>
-              </svg>
-              Error
-            </h3>
-          )}
-          <p className="text-sm">{status.message}</p>
-        </div>
-      )}
     </motion.div>
   );
 }
