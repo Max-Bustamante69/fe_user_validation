@@ -2,8 +2,11 @@ import { useState } from "react";
 import axios from "axios";
 import { documentTypeOptions } from "../lib/utils/constants";
 import { motion } from "framer-motion";
+import InputField from "./InputField"; 
+import Button from "./Button";
+import SelectField from "./SelectField";
 
-import "@styles/tailwind.css";
+import "../styles/tailwind.css";
 
 function DiditForm() {
   const [formData, setFormData] = useState({
@@ -59,13 +62,8 @@ function DiditForm() {
       <form onSubmit={handleSubmit} className="space-y-5">
         <div className="grid grid-cols-2 gap-4">
           <div className="space-y-2">
-            <label
-              htmlFor="firstName"
-              className="block text-sm font-medium text-gray-300"
-            >
-              First Name
-            </label>
-            <input
+            <InputField
+              label={"First Name"}
               type="text"
               id="firstName"
               name="firstName"
@@ -73,18 +71,12 @@ function DiditForm() {
               onChange={handleChange}
               placeholder="John"
               required
-              className="w-full px-3 py-2.5 bg-gray-700 border border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-500 transition-all duration-200"
             />
           </div>
 
           <div className="space-y-2">
-            <label
-              htmlFor="lastName"
-              className="block text-sm font-medium text-gray-300"
-            >
-              Last Name
-            </label>
-            <input
+            <InputField
+              label={"Last Name"}
               type="text"
               id="lastName"
               name="lastName"
@@ -92,19 +84,13 @@ function DiditForm() {
               onChange={handleChange}
               placeholder="Doe"
               required
-              className="w-full px-3 py-2.5 bg-gray-700 border border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-500 transition-all duration-200"
             />
           </div>
         </div>
 
         <div className="space-y-2">
-          <label
-            htmlFor="documentId"
-            className="block text-sm font-medium text-gray-300"
-          >
-            Document ID
-          </label>
-          <input
+          <InputField
+            label={"Document ID"}
             type="text"
             id="documentId"
             name="documentId"
@@ -112,52 +98,36 @@ function DiditForm() {
             onChange={handleChange}
             placeholder="Enter your document ID"
             required
-            className="w-full px-3 py-2.5 bg-gray-700 border border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent placeholder-gray-500 transition-all duration-200"
           />
         </div>
 
         <div className="space-y-2">
-          <label
-            htmlFor="documentType"
-            className="block text-sm font-medium text-gray-300"
-          >
-            Document Type
-          </label>
-          <select
+
+          <SelectField
+            label={"Document Type"}
             id="documentType"
+            options={documentTypeOptions}
             name="documentType"
             value={formData.documentType}
             onChange={handleChange}
-            required
-            className="w-full px-3 py-2.5 bg-gray-700 border border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 appearance-none"
+            required          
             style={{
               backgroundImage:
                 'url(\'data:image/svg+xml;charset=US-ASCII,<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z" fill="%236B7280"/></svg>\')',
               backgroundRepeat: "no-repeat",
               backgroundPosition: "right 0.5rem center",
             }}
-          >
-            {documentTypeOptions.map((option, index) => (
-              <option key={index} value={option.value}>
-                {option.label}
-              </option>
-            ))}
-          </select>
+          ></SelectField>
         </div>
 
         <div className="space-y-2">
-          <label
-            htmlFor="features"
-            className="block text-sm font-medium text-gray-300"
-          >
-            Features
-          </label>
-          <select
+          <SelectField
+          label = "Features"
             id="features"
+            options = {[{label: "OCR only", value: "OCR"}]}
             name="features"
             value={formData.features}
             onChange={handleChange}
-            className="w-full px-3 py-2.5 bg-gray-700 border border-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 appearance-none"
             style={{
               backgroundImage:
                 'url(\'data:image/svg+xml;charset=US-ASCII,<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z" fill="%236B7280"/></svg>\')',
@@ -165,14 +135,16 @@ function DiditForm() {
               backgroundPosition: "right 0.5rem center",
             }}
           >
-            <option value="OCR">OCR only</option>
-          </select>
+            
+          </SelectField>
         </div>
 
-        <button
+        <Button
+          variant={"primary"}
+          size={"md"}
           type="submit"
           disabled={isLoading}
-          className={`w-full mt-6 py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-300 ease-in-out flex items-center justify-center space-x-2 ${
+          className={`w-full${
             isLoading ? "opacity-80 cursor-not-allowed" : ""
           }`}
         >
@@ -203,7 +175,7 @@ function DiditForm() {
           ) : (
             "Create KYC Session"
           )}
-        </button>
+        </Button>
       </form>
       {status && (
         <div
