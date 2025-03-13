@@ -16,6 +16,7 @@ import Success from "@pages/Desktop/Success";
 import ErrorLayout from "@/pages/Desktop/ErrorLayout";
 import AuthFailed from "./pages/Desktop/AuthFailed";
 import Error404 from "./pages/Desktop/Error404";
+import ResponsiveLayout from "./components/ResponsiveLayout";
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -24,7 +25,7 @@ function AnimatedRoutes() {
     <AnimatePresence>
       <Routes location={location} key={location.pathname}>
         {/* Main application routes */}
-        <Route path="/" element={<Layout />}>
+        <Route path="/" element={<ResponsiveLayout />}>
           {/* Public routes */}
           <Route index element={<Home />} />
           <Route path="terms" element={<Terms />} />
