@@ -3,7 +3,7 @@ import axios from "axios";
 import { documentTypeOptions } from "../lib/utils/constants";
 import { motion } from "framer-motion";
 
-import "../styles/tailwind.css";
+import "@styles/tailwind.css";
 
 function DiditForm() {
   const [formData, setFormData] = useState({

@@ -1,5 +1,8 @@
 import {cva} from 'class-variance-authority';
-import { cn } from '../lib/utils/utils';
+import { cn } from '@/lib/utils/utils';
+
+import "@styles/tailwind.css";
+
 const buttonVariants = cva(
   "flex items-center justify-center font-medium transition-all duration-200 ease-in cursor-pointer",
   {

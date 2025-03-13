@@ -1,10 +1,10 @@
-import "../styles/tailwind.css";
+import "@styles/tailwind.css";
 
 import React from "react";
-import Card from "../components/Card";
-import ScrollableText from "../components/ScrollableText";
-import Button from "../components/Button";
-import { terms } from "../utils/constants";
+import Card from "@components/Card";
+import ScrollableText from "@components/ScrollableText";
+import Button from "@components/Button";
+import { terms } from "@/lib/utils/constants";
 import { Link } from "react-router";
 
 function Terms() {

@@ -1,5 +1,7 @@
 import React from "react";
 
+import '@styles/tailwind.css';
+
 const ScrollableText = ({ text }) => {
   return (
     <div className="transform  w-full max-w-lg   bg-transparent ">
