@@ -6,7 +6,7 @@ const SelectField = ({ label, options, value, ...props }) => {
       <label className="font-semibold text-primary ">{label}</label>
       <select
         value={value}
-        className="w-full font-semibold appearance-none p-2 mt-1 border border-gray-300 rounded-md bg-white text-placeholder-text focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-200"
+        className="w-full font-semibold appearance-none p-2 mt-1 border border-gray-300 rounded-md bg-white text-secondary-text focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-200"
         {...props}
       >
         <option value="" disabled hidden>
