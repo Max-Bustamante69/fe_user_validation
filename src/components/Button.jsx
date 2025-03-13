@@ -15,9 +15,12 @@ const buttonVariants = cva(
           "border border-accent text-highlight-text px-4 py-2 rounded-lg hover:bg-accent hover:text-white transition",
       },
       size: {
-        md: "h-10 py-2 px-4",
         sm: "h-8 py-2 px-3",
+        md: "h-10 py-2 px-4",
         lg: "h-12 py-3 px-5",
+        roundSm: "w-10 h-10 p-0",
+        roundMd: "w-12 h-12 p-0",
+        roundLg: "w-16 h-16 p-0",
       },
     },
     defaultVariant: {
