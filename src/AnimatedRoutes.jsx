@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from './pages/Layout'
 import Home from './pages/Home'
 import DiditForm from './components/DiditForm'
+import Terms from './pages/Terms'
 import { useLocation } from 'react-router'
 import { Routes, Route } from 'react-router'
 import { AnimatePresence } from 'framer-motion'
@@ -18,6 +19,8 @@ function AnimatedRoutes() {
         <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="/didit" element={<DiditForm />} />
+            <Route path="/terms" element={<Terms />} />
+
         </Route>
         </Routes>
     </AnimatePresence>
