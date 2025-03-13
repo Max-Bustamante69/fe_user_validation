@@ -1,8 +1,8 @@
 @import "tailwindcss";
 @theme {
-  --color-primary: #203C8A;
-  --color-accent: #EA5865;
-  --color-primary-text: #1E1E1C;
+  --color-primary: #203c8a;
+  --color-accent: #ea5865;
+  --color-primary-text: #1e1e1c;
   --color-secondary-text: #253058;
   --color-placeholder-text:#7A7F93; 
   --color-drop-shadow: #E3EBFB;
@@ -11,7 +11,58 @@
 
 }
 
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    width: 20px;
+    height: 20px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background: #ffffff;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: #ea5865;
+    border-radius: 100vh;
+    border: 3px solid #ea5865;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+  }
+
+  /* Add Mozilla scrollbar styling */
+  .scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #ea5865 #ffffff;
+  }
+
+  /* Add Safari scrollbar styling */
+  .scrollbar::-webkit-scrollbar {
+    width: 20px;
+    height: 20px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background: #ffffff;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background:#ea5865;
+    border-radius: 100vh;
+    border: 3px solid #ea5865;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #ea5865;
+  }
+}
+
+
 
 *{
   font-family: "Poppins", sans-serif;
 }
+
