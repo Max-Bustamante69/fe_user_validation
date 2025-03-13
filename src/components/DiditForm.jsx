@@ -139,6 +139,7 @@ function DiditForm() {
           size={"md"}
           type="submit"
           disabled={isLoading}
+          aria-label="Create KYC Session"
           className={`w-full${
             isLoading ? "opacity-80 cursor-not-allowed" : ""
           }`}

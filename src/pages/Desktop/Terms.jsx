@@ -18,13 +18,13 @@ function Terms() {
         <ScrollableText text={terms} />
 
         <div className="flex justify-end w-full gap-8">
-          <Link to={"/"}>
-            <Button variant="underline" size={"md"}>
+          <Link to={"/"} aria-label="Decline Terms and Conditions">
+            <Button variant="underline" size={"md"} aria-label="Decline">
               Decline
             </Button>
           </Link>
-          <Link to={"/didit"}>
-            <Button variant={"primary"} size={"md"}>
+          <Link to={"/didit"} aria-label="Accept Terms and Conditions">
+            <Button variant={"primary"} size={"md"} aria-label="Accept">
               Accept
             </Button>
           </Link>

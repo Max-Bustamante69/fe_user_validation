@@ -32,25 +32,25 @@ function Home() {
 
       <div className="flex flex-col gap-12 md:w-1/2 items-end">
         <Card className="justify-center items-center bg-white w-full shadow-xl p-6">
-          <ul className="text-lg  flex flex-col text-secondary-text justify-center gap-4 list-disc ">
-            <li className="   mb-4">
+          <ul className="text-lg flex flex-col text-secondary-text justify-center gap-4 list-disc">
+            <li className="mb-4">
               Otorga acceso restringido a tus vendedores para confirmar cada
               venta sin necesidad de compartir información de tus cuentas
               bancarias.
             </li>
-            <li className="   mb-4">
+            <li className="mb-4">
               Agiliza la confirmación de pagos de tus compradores.
             </li>
-            <li className="   mb-4">
+            <li className="mb-4">
               Concilia de forma fácil los ingresos en el banco con tus facturas.
             </li>
-            <li className="   mb-4">
+            <li className="mb-4">
               Evita aceptar comprobantes falsos de pagos.
             </li>
           </ul>
         </Card>
-        <Link to={"/terms"}>
-          <Button variant={"rounded"} size={"roundLg"}>
+        <Link to={"/terms"} aria-label="Read Terms and Conditions">
+          <Button variant={"rounded"} size={"roundLg"} aria-label="Next">
             <MdNavigateNext className="w-8 h-8" />
           </Button>
         </Link>

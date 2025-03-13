@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /node_modules/
+Disallow: /dist/
+Disallow: /dist-ssr/
+Disallow: /*.log
+Disallow: /*.local
+Allow: /
+Sitemap: /sitemap.xml

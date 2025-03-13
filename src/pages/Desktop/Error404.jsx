@@ -13,8 +13,8 @@ function Error404() {
         </h2>
       </div>
       <div className="flex w-full justify-end">
-        <Link to={"/"}>
-          <Button variant={"rounded"} size={"roundLg"}>
+        <Link to={"/"} aria-label="Go to Home Page">
+          <Button variant={"rounded"} size={"roundLg"} aria-label="Back">
             <FaHouse className="w-8 h-8" />
           </Button>
         </Link>

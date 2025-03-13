@@ -15,16 +15,16 @@ function AuthFailed() {
         </h2>
       </div>
       <div className="flex w-full justify-between items-center">
-        <Link to={"/didit"}>
-          <Button variant={"rounded"} size={"roundLg"}>
+        <Link to={"/didit"} aria-label="Retry Authentication">
+          <Button variant={"rounded"} size={"roundLg"} aria-label="Back">
             <MdNavigateBefore className="w-8 h-8" />
           </Button>
         </Link>
-        <Link to={"https://pagui.co/"} target="_blank">
-          <Button variant={"underline"}>SOPORTE TECNICO</Button>
+        <Link to={"https://pagui.co/"} target="_blank" aria-label="Contact Technical Support">
+          <Button variant={"underline"} aria-label="Soporte">SOPORTE TECNICO</Button>
         </Link>
-        <Link to={"/"}>
-          <Button variant={"rounded"} size={"roundLg"}>
+        <Link to={"/"} aria-label="Go to Home Page">
+          <Button variant={"rounded"} size={"roundLg"} aria-label="Next">
             <IoCheckmarkOutline className="w-8 h-8" />
           </Button>
         </Link>
