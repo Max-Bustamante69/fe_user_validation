@@ -1,0 +1,77 @@
+@font-face {
+  font-family: Poppins;
+  src: url('../assets/fonts//Poppins-Regular.ttf') format('truetype');
+}
+
+
+@import "tailwindcss";
+@theme {
+  --color-primary: #203c8a;
+  --color-accent: #ea5865;
+  --color-primary-text: #1e1e1c;
+  --color-secondary-text: #253058;
+  --color-placeholder-text:#7A7F93; 
+  --color-drop-shadow: #E3EBFB;
+  --color-highlight-text:#D23643; 
+  --font-poppins: Poppins, sans-serif;
+}
+
+
+
+body{
+  overflow: hidden;
+}
+
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    width: 20px;
+    height: 20px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background: #ffffff;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: #ea5865;
+    border-radius: 100vh;
+    border: 3px solid #ea5865;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+  }
+
+  /* Add Mozilla scrollbar styling */
+  .scrollbar {
+    scrollbar-width: auto;
+    scrollbar-color: #ea5865 #ffffff77;
+  }
+
+  /* Add Safari scrollbar styling */
+  .scrollbar::-webkit-scrollbar {
+    width: 20px;
+    height: 20px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background: #ffffff;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background:#ea5865;
+    border-radius: 100vh;
+    border: 3px solid #ea5865;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #ea5865;
+  }
+}
+
+
+
+
+
