@@ -22,7 +22,7 @@ function Layout() {
           className="absolute -bottom-8 z-0 right-0 w-1/3"
         />
 
-        <Card className="w-2/3 h-4/5 py-12 justify-center z-10  bg-white/80 backdrop-blur-xl shadow-2xl shadow-drop-shadow rounded-xl ">
+        <Card className="w-2/3 min-h-4/5 py-12 justify-center z-10  bg-white/80 backdrop-blur-xl shadow-2xl shadow-drop-shadow rounded-xl ">
           <div className="flex flex-col gap-8 items-start  w-full">
             <Link to="/">
               <img className="w-24" src={logo} alt="Pagui Logo" />
