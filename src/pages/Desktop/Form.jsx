@@ -2,7 +2,7 @@ import React from "react";
 import Card from "@components/Card";
 import DiditForm from "@/components/DiditForm";
 
-import "@styles/tailwind.css";
+ 
 
 function Form() {
   return (

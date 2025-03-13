@@ -7,7 +7,6 @@ import Button from "./Button";
 import SelectField from "./SelectField";
 import { useNavigate } from "react-router";
 
-import "../styles/tailwind.css";
 
 function DiditForm() {
 

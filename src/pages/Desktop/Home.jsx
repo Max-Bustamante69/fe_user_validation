@@ -4,7 +4,7 @@ import { Link } from "react-router";
 import { MdNavigateNext } from "react-icons/md";
 import { motion } from "framer-motion";
 
-import "@styles/tailwind.css";
+ 
 
 function Home() {
   return (
