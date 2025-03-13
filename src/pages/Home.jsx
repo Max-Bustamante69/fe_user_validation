@@ -1,11 +1,22 @@
+import Button from "../components/Button";
 import Card from "../components/Card";
+import { Link } from "react-router";
 import { MdNavigateNext } from "react-icons/md";
+import { motion } from "framer-motion";
 
 import "../styles/tailwind.css";
 
 function Home() {
+
+
   return (
-    <div className="flex gap-12 items-start justify-between lg:max-w-5xl">
+    <motion.div
+      className="flex gap-12 items-start justify-between lg:max-w-5xl"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.3 }}
+    >
       <div className="flex flex-col gap-4 w-1/2">
         <h1 className="text-3xl font-bold text-primary mb-2 tracking-tight">
           Bienvenido a la Experiencia Pagui
@@ -40,11 +51,13 @@ function Home() {
             </li>
           </ul>
         </Card>
-        <button className="bg-accent text-white rounded-full font-extrabold text-lg h-16 w-16 mt-4 flex flex-col items-center justify-center">
-          <MdNavigateNext className="w-8 h-8" />
-        </button>
+        <Link to={"/didit"}>
+          <Button variant={"rounded"} size={"roundLg"}>
+            <MdNavigateNext className="w-8 h-8" />
+          </Button>
+        </Link>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
