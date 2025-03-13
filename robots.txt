@@ -5,4 +5,4 @@ Disallow: /dist-ssr/
 Disallow: /*.log
 Disallow: /*.local
 Allow: /
-Sitemap: /sitemap.xml
+Sitemap: https://yourdomain.com/sitemap.xml
