@@ -4,14 +4,13 @@
   --color-accent: #ea5865;
   --color-primary-text: #1e1e1c;
   --color-secondary-text: #253058;
-  --color-placeholder-text: #7a7f93;
+  --color-placeholder-text:#7A7F93; 
+  --color-drop-shadow: #E3EBFB;
+  --color-highlight-text:#D23643; 
+
+
 }
 
-#root {
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
 @layer utilities {
   .scrollbar::-webkit-scrollbar {
     width: 20px;
@@ -60,3 +59,10 @@
     background: #ea5865;
   }
 }
+
+
+
+*{
+  font-family: "Poppins", sans-serif;
+}
+
