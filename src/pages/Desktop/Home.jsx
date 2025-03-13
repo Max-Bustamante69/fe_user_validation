@@ -1,14 +1,12 @@
-import Button from "../components/Button";
-import Card from "../components/Card";
+import Button from "@components/Button";
+import Card from "@components/Card";
 import { Link } from "react-router";
 import { MdNavigateNext } from "react-icons/md";
 import { motion } from "framer-motion";
 
-import "../styles/tailwind.css";
+import "@styles/tailwind.css";
 
 function Home() {
-
-
   return (
     <motion.div
       className="flex gap-12 items-start justify-between lg:max-w-5xl"
@@ -51,7 +49,7 @@ function Home() {
             </li>
           </ul>
         </Card>
-        <Link to={"/didit"}>
+        <Link to={"/terms"}>
           <Button variant={"rounded"} size={"roundLg"}>
             <MdNavigateNext className="w-8 h-8" />
           </Button>

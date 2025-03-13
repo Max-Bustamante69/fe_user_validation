@@ -7,8 +7,10 @@
   --color-placeholder-text:#7A7F93; 
   --color-drop-shadow: #E3EBFB;
   --color-highlight-text:#D23643; 
+}
 
-
+body{
+  overflow: hidden;
 }
 
 @layer utilities {
@@ -34,8 +36,8 @@
 
   /* Add Mozilla scrollbar styling */
   .scrollbar {
-    scrollbar-width: thin;
-    scrollbar-color: #ea5865 #ffffff;
+    scrollbar-width: auto;
+    scrollbar-color: #ea5865 #ffffff77;
   }
 
   /* Add Safari scrollbar styling */
