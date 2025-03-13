@@ -14,7 +14,7 @@ function AuthFailed() {
           No eres tu? contacta el soporte tecnico de pagui
         </h2>
       </div>
-      <div className="flex w-full justify-between items-center">
+      <div className="flex w-full justify-between items-center absolute bottom-0">
         <Link to={"/didit"} aria-label="Retry Authentication">
           <Button variant={"rounded"} size={"roundLg"} aria-label="Back">
             <MdNavigateBefore className="w-8 h-8" />
