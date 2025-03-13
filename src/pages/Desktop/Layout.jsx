@@ -9,7 +9,7 @@ import "@styles/tailwind.css";
 
 function Layout() {
   return (
-    <div className="h-screen w-full flex items-center justify-center bg-white overflow-hidden relative">
+    <div className="h-screen w-full flex items-center justify-center bg-white overflow-hidden relative font-poppins">
       <img
         src={vector1}
         alt="Pagui Vector"
