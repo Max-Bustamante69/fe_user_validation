@@ -2,6 +2,7 @@ import React from "react";
 import Button from "@/components/Button";
 import { FaHouse } from "react-icons/fa6";
 import { Link } from "react-router";
+import { isMobile } from "@/lib/utils/isMobile";
 
 function Error404() {
   return (
@@ -14,7 +15,7 @@ function Error404() {
       </div>
       <div className="flex w-full justify-end">
         <Link to={"/"} aria-label="Go to Home Page">
-          <Button variant={"rounded"} size={"roundLg"} aria-label="Back">
+          <Button variant={"rounded"} size={isMobile() ? "roundMd" : "roundLg"} aria-label="Back">
             <FaHouse className="w-8 h-8" />
           </Button>
         </Link>

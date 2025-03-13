@@ -16,13 +16,15 @@ function Home() {
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.3 }}
     >
-      <div className="flex flex-col justify-around gap-4 w-full max-w-sm">
-        <img className="lg:hidden  w-full" src={mobileSvg} alt="" />
-        <h1 className="text-3xl font-bold text-primary mb-2 tracking-tight">
+      <div className="flex flex-col items-center justify-around gap-12 w-full max-w-sm">
+        <img className="lg:hidden max-w-3/4 w-full" src={mobileSvg} alt="" width="300" height="300" />
+        <div>
+        <h1 className="text-2xl lg:text-3xl font-bold text-primary mb-2 tracking-tight">
+          
           Bienvenido a la Experiencia Pagui
         </h1>
         {isMobile() ? (
-          <p className="text-xl text-primary-text text-start mb-4">
+          <p className="text-lg lg:text-xl text-primary-text text-start mb-4">
             Pagui es el mejor canal para facilitar tus compras de manera ágil, sencilla y segura a través de WhatsApp.
           </p>
         ) : (
@@ -35,6 +37,7 @@ function Home() {
             </p>
           </>
         )}
+        </div>
       </div>
 
       {!isMobile() ? (
@@ -56,14 +59,14 @@ function Home() {
             </ul>
           </Card>
           <Link to={"/terms"} aria-label="Read Terms and Conditions">
-            <Button variant={"rounded"} size={"roundLg"} aria-label="Next">
+            <Button variant={"rounded"} size={isMobile() ? "roundMd" : "roundLg"} aria-label="Next">
               <MdNavigateNext className="w-8 h-8" />
             </Button>
           </Link>
         </div>
       ) : (
         <Link className="w-full flex justify-end absolute bottom-0" to={"/terms"} aria-label="Read Terms and Conditions">
-          <Button variant={"rounded"} size={"roundLg"} aria-label="Next">
+          <Button variant={"rounded"} size={isMobile() ? "roundMd" : "roundLg"} aria-label="Next">
             <MdNavigateNext className="w-8 h-8" />
           </Button>
         </Link>

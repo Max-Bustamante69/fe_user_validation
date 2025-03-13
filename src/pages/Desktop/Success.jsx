@@ -24,7 +24,7 @@ function Success() {
       </div>
       <div className="flex w-full justify-end">
         <Link to={"/"} aria-label="Go to Home Page">
-          <Button variant={"rounded"} size={"roundLg"} aria-label="Next">
+          <Button variant={"rounded"} size={isMobile() ? "roundMd" : "roundLg"} aria-label="Next">
             <IoCheckmarkOutline className="w-8 h-8" />
           </Button>
         </Link>

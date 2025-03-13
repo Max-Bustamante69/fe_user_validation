@@ -32,13 +32,13 @@ function Terms() {
       </Card>
     ) : (
      
-        <div className="flex flex-col items-start justify-start gap-8  h-full w-full p-4">
+        <div className="flex flex-col items-start justify-start gap-4  h-full w-full p-4">
           <div>
 
-          <h1 className="text-3xl font-bold text-secondary-text mb-2 tracking-tight">
+          <h1 className="text-2xl font-bold text-secondary-text mb-2 tracking-tight">
             Terms and Conditions
           </h1>
-          <h2 className="text-xl text-primary-text text-start mb-4">
+          <h2 className="text-lg text-primary-text text-start mb-4">
             Your Agreement
           </h2>
           <hr className="bg-primary-text w-full opacity-20"/>
