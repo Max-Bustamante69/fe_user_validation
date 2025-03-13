@@ -10,14 +10,14 @@ import { isMobile } from "@/lib/utils/isMobile";
 function Home() {
   return (
     <motion.div
-      className="flex gap-12 items-start justify-center lg:justify-between lg:max-w-5xl"
+      className="flex gap-6 lg:flex-row flex-col items-center lg:gap-12 lg:items-start h-full w-full justify-start lg:justify-between lg:max-w-5xl relative"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.3 }}
     >
-      <div className="flex flex-col gap-4 w-1/2">
-        <img className="md:hidden w-full" src={mobileSvg} alt="" />
+      <div className="flex flex-col justify-around gap-4 w-full max-w-sm">
+        <img className="lg:hidden  w-full" src={mobileSvg} alt="" />
         <h1 className="text-3xl font-bold text-primary mb-2 tracking-tight">
           Bienvenido a la Experiencia Pagui
         </h1>
@@ -37,8 +37,8 @@ function Home() {
         )}
       </div>
 
-      {!isMobile() && (
-        <div className="md:flex flex-col gap-12 md:w-1/2 items-end hidden">
+      {!isMobile() ? (
+        <div className="lg:flex flex-col gap-12 lg:2/3  items-end hidden">
           <Card className="justify-center items-center bg-white w-full shadow-xl p-6 ">
             <ul className="text-lg flex flex-col text-secondary-text justify-center gap-4 list-disc">
               <li className="mb-4">
@@ -61,6 +61,12 @@ function Home() {
             </Button>
           </Link>
         </div>
+      ) : (
+        <Link className="w-full flex justify-end absolute bottom-0" to={"/terms"} aria-label="Read Terms and Conditions">
+          <Button variant={"rounded"} size={"roundLg"} aria-label="Next">
+            <MdNavigateNext className="w-8 h-8" />
+          </Button>
+        </Link>
       )}
     </motion.div>
   );
