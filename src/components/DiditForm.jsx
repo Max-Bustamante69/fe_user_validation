@@ -21,6 +21,7 @@ function DiditForm() {
   });
   const [status, setStatus] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [session, setSession] = useState(null);
 
   useEffect(() => {
     if(status && status.type === "error") {
@@ -52,8 +53,11 @@ function DiditForm() {
         features: formData.features,
       });
 
+      const sessionData = response.data
       // Redirect to verification URL
-      window.location.href = response.data.verification_url;
+      sessionStorage.setItem("sessionId", sessionData.session_id);
+      window.location.href = sessionData.verification_url;
+      
     } catch (error) {
       setStatus({
         message: error.response?.data?.error || error.message,
