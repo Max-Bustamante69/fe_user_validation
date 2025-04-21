@@ -3,7 +3,6 @@ import Card from "@components/Card";
 import { Link } from "react-router";
 import { MdNavigateNext } from "react-icons/md";
 import { motion } from "framer-motion";
-
 import mobileSvg from "@assets/pagui-home-mobile.svg";
 import { isMobile } from "@/lib/utils/isMobile";
 
