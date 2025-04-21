@@ -26,7 +26,7 @@ function ValidationForm({ user = {} }) {
 
   return (
     <motion.div {...animationConfig}>
-      {user && (
+      {user && userData && (
         <form className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Left column */}
           <div className="flex flex-col gap-4">
@@ -35,7 +35,7 @@ function ValidationForm({ user = {} }) {
               value={userData.firstName}
               disabled
             />
-            <InputField label="Last Name" value={'sadfafdsafadsfadsfdssdfsdfdas'} disabled />
+            <InputField label="Last Name" value={userData.firstName} disabled />
             <InputField
               label="Document ID"
               value={userData.documentId}
