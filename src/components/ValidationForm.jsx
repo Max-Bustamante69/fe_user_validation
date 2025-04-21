@@ -35,7 +35,7 @@ function ValidationForm({ user = {} }) {
               value={userData.firstName}
               disabled
             />
-            <InputField label="Last Name" value={userData.firstName} disabled />
+            <InputField label="Last Name" value={userData.lastName} disabled />
             <InputField
               label="Document ID"
               value={userData.documentId}
