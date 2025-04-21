@@ -11,6 +11,7 @@ import Home from "@pages/Desktop/Home";
 import Terms from "@pages/Desktop/Terms";
 import Form from "@pages/Desktop/Form";
 import Success from "@pages/Desktop/Success";
+import UserValidation from "./pages/Desktop/UserValidation";
 
 // Error handling components
 import ErrorLayout from "@/pages/Desktop/ErrorLayout";
@@ -31,6 +32,7 @@ function AnimatedRoutes() {
           <Route path="terms" element={<Terms />} />
           <Route path="didit" element={<Form />} />
           <Route path="success" element={<Success />} />
+          <Route path="user-validation" element={<UserValidation />} />
 
           {/* Error routes */}
           <Route path="failed" element={<ErrorLayout />}>

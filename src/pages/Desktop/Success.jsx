@@ -4,6 +4,7 @@ import success from "@/assets/pagui-success.svg";
 import { IoCheckmarkOutline } from "react-icons/io5";
 import { Link } from "react-router";
 import { motion } from "framer-motion";
+import { isMobile } from "@/lib/utils/isMobile";
 
 function Success() {
   return (
