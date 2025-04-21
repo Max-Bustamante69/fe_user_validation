@@ -141,17 +141,6 @@ function DiditForm() {
           />
         </div>
 
-        <InputField
-          label="Document ID"
-          type="text"
-          id="documentId"
-          name="documentId"
-          value={formData.documentId}
-          onChange={handleChange}
-          placeholder="Enter your document ID"
-          required
-        />
-
         <SelectField
           label="Document Type"
           id="documentType"
@@ -167,6 +156,17 @@ function DiditForm() {
             backgroundPosition: "right 0.5rem center",
           }}
         />
+        <InputField
+          label="Document ID"
+          type="text"
+          id="documentId"
+          name="documentId"
+          value={formData.documentId}
+          onChange={handleChange}
+          placeholder="Enter your document ID"
+          required
+        />
+
 
         <Button
           variant="primary"

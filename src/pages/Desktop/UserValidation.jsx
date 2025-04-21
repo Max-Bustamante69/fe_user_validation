@@ -29,17 +29,23 @@ function UserValidation() {
 
       try {
         setIsLoading(true);
+        const sessionId = sessionStorage.getItem("sessionId");
         const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
-        const endpointUrl = `${BACKEND_URL}/kyc/api/session/${sessionId}`;
+        const endpointUrl = `${BACKEND_URL}/kyc/api/session/${sessionId}/`;
+
 
         // Use authFetch instead of axios
-        const response = await authFetch(endpointUrl);
+        const response = await authFetch(endpointUrl, {
+          method: "GET",
+        });
 
         if (!response.ok) {
           throw new Error("Failed to fetch session data");
         }
+        const data = await response.json();
 
-        const sessionData = await response.json();
+        const sessionData = data.kyc;
+
         setSession(sessionData);
         setStatus({
           message: "Session data fetched successfully",
@@ -86,8 +92,8 @@ function UserValidation() {
         <p className="text-red-500">{status.message}</p>
       )}
 
-      {session?.personal_data && (
-        <ValidationForm user={session.personal_data} />
+      {session && (
+        <ValidationForm session={session} />
       )}
     </Card>
   );
