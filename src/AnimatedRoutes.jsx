@@ -32,7 +32,10 @@ function AnimatedRoutes() {
           <Route path="terms" element={<Terms />} />
           <Route path="didit" element={<Form />} />
           <Route path="success" element={<Success />} />
-          <Route path="user-validation" element={<UserValidation />} />
+          <Route
+            path="user-validation/:documentId"
+            element={<UserValidation />}
+          />
 
           {/* Error routes */}
           <Route path="failed" element={<ErrorLayout />}>
@@ -40,13 +43,14 @@ function AnimatedRoutes() {
           </Route>
 
           {/* Catch-all route */}
-          <Route path="*" element={
-            <ErrorLayout>
-              <Error404 />
-            </ErrorLayout>
-            }>
-           
-          </Route>
+          <Route
+            path="*"
+            element={
+              <ErrorLayout>
+                <Error404 />
+              </ErrorLayout>
+            }
+          ></Route>
         </Route>
       </Routes>
     </AnimatePresence>
