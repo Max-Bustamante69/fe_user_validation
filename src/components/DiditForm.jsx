@@ -22,12 +22,8 @@ function DiditForm() {
   const [status, setStatus] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  // Handle navigation only on actual errors, not during processing
-  useEffect(() => {
-    if (status && status.type === "error") {
-      navigate("/failed");
-    }
-  }, [status, navigate]);
+
+ 
 
   const handleChange = (e) => {
     const { name, value } = e.target;
