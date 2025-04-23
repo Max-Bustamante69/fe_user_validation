@@ -32,7 +32,7 @@ function ValidationForm({ session = {} }) {
 
   useEffect(() => {
     if (isValid !== null) {
-      const sessionId = sessionStorage.getItem("sessionId");
+      const sessionId = session?.session_id;
       const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
       const endpointUrl = `${BACKEND_URL}/kyc/api/session/${sessionId}/resolve/`;
       const handleRejection = () => {
