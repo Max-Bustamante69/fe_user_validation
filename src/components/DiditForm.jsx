@@ -6,10 +6,11 @@ import Button from "./Button";
 import SelectField from "./SelectField";
 import { useNavigate } from "react-router";
 import { useAuth } from "../contexts/AuthContext"; // Import the auth context
+import Loader from "./Loader";
 
 function DiditForm() {
   const navigate = useNavigate();
-  const { authFetch, isLoading: authLoading } = useAuth(); // Use the auth context
+  const { authFetch, isLoading: authLoading, setDeviceAsOrigin } = useAuth(); // Use the auth context
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -21,12 +22,8 @@ function DiditForm() {
   const [status, setStatus] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  // Handle navigation only on actual errors, not during processing
-  useEffect(() => {
-    if (status && status.type === "error") {
-      navigate("/failed");
-    }
-  }, [status, navigate]);
+
+ 
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -82,8 +79,8 @@ function DiditForm() {
 
       const sessionData = await response.json();
 
-      // Store session id in sessionStorage and redirect
-      sessionStorage.setItem("sessionId", sessionData.session_id);
+
+      setDeviceAsOrigin(true); // Set device as origin
       window.location.href = sessionData.verification_url;
     } catch (error) {
       console.error("KYC session creation failed:", error);
@@ -98,8 +95,8 @@ function DiditForm() {
   // Show auth loading state if authentication is still initializing
   if (authLoading) {
     return (
-      <div className="flex justify-center items-center">
-        <p>Loading...</p>
+      <div className="flex items-center justify-center h-full">
+        <Loader text="Autenticando..." size="lg" spinner="accent" />
       </div>
     );
   }

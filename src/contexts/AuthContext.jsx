@@ -6,6 +6,18 @@ const AuthContext = createContext();
 export function AuthProvider({ children }) {
   const [token, setToken] = useState(localStorage.getItem("access_token"));
   const [isLoading, setIsLoading] = useState(true);
+  // Add the isOriginDevice state, load from localStorage if available
+  const [isOriginDevice, setIsOriginDevice] = useState(() => {
+    const stored = sessionStorage.getItem("isOriginDevice");
+    return stored ? JSON.parse(stored) : false;
+  });
+
+  // Function to update the origin device state
+  const setDeviceAsOrigin = (value) => {
+    const newValue = value === undefined ? true : !!value;
+    sessionStorage.setItem("isOriginDevice", JSON.stringify(newValue));
+    setIsOriginDevice(newValue);
+  };
 
   useEffect(() => {
     async function initAuth() {
@@ -23,6 +35,7 @@ export function AuthProvider({ children }) {
         localStorage.setItem("access_token", data.access);
         localStorage.setItem("refresh_token", data.refresh);
         setToken(data.access);
+        if(!isOriginDevice) setDeviceAsOrigin(false)
 
         console.log("Authentication token refreshed");
       } catch (error) {
@@ -46,7 +59,15 @@ export function AuthProvider({ children }) {
   };
 
   return (
-    <AuthContext.Provider value={{ token, isLoading, authFetch }}>
+    <AuthContext.Provider
+      value={{
+        token,
+        isLoading,
+        authFetch,
+        isOriginDevice,
+        setDeviceAsOrigin,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );

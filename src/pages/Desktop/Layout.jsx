@@ -25,13 +25,18 @@ function Layout() {
         width="300"
         height="300"
       />
-
-      <Card className="w-2/3 min-h-4/5 py-12 justify-center z-10  bg-white/80 backdrop-blur-xl shadow-2xl shadow-drop-shadow rounded-xl ">
-        <div className="flex flex-col gap-8 items-start  w-full">
+      <Card className="w-2/3 min-h-4/5 py-12 flex flex-col z-10 bg-white/80 backdrop-blur-xl shadow-2xl shadow-drop-shadow rounded-xl">
+        <div className="flex flex-col gap-8 items-start w-full flex-1">
           <Link to="/" aria-label="Go to Home Page">
-            <img className="w-24" src={logo} alt="Pagui Logo" width="96" height="96" />
+            <img
+              className="w-24"
+              src={logo}
+              alt="Pagui Logo"
+              width="96"
+              height="96"
+            />
           </Link>
-          <div className="flex justify-around items-space  w-full">
+          <div className="flex flex-col justify-start items-center w-full  flex-1">
             <Outlet />
           </div>
         </div>
