@@ -36,7 +36,7 @@ function Layout() {
               height="96"
             />
           </Link>
-          <div className="flex flex-col justify-start items-center w-full  flex-1">
+          <div className="flex flex-col justify-center items-center w-full  flex-1">
             <Outlet />
           </div>
         </div>
