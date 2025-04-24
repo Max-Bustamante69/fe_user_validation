@@ -24,7 +24,7 @@ function ValidationForm({ session = {} }) {
   const userData = {
     firstName: session?.first_name || "",
     lastName: session?.last_name || "",
-    documentId: session?.document_number || session?.personal_number || "",
+    documentId: session?.personal_number || session?.document_number || "",
     nationality: session?.issuing_state_name || "",
     documentType: session?.document_type || "",
     dateOfBirth: session?.date_of_birth || "",
