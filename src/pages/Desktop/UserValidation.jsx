@@ -5,6 +5,7 @@ import Card from "@/components/Card";
 import { useAuth } from "@/contexts/AuthContext";
 import { useNavigate, useParams } from "react-router";
 import Loader from "@/components/Loader";
+import { IoCheckmarkOutline } from "react-icons/io5"; // Import checkmark icon
 
 function UserValidation() {
   const navigate = useNavigate();
@@ -18,7 +19,6 @@ function UserValidation() {
 
   useEffect(() => {
     const fetchSessionData = async () => {
-    
       if (!documentId) {
         setStatus({
           message: "No document ID found",
@@ -45,6 +45,14 @@ function UserValidation() {
         const res = await response.json();
 
         const sessionData = res.data; // Assuming the response structure is { data: { ... } }
+        if (!sessionData) {
+          setStatus({
+            message: "No session data found",
+            type: "error",
+          });
+          navigate("/failed");
+          return;
+        }
 
         console.log("Session data:", sessionData);
 
@@ -109,25 +117,40 @@ function UserValidation() {
               Valida tu identidad
             </h2>
           </div>
-          {
-            session &&  (
-              <ValidationForm session={session} />
-            )
-          }
+          {session && <ValidationForm session={session} />}
         </>
-      ) :  session && (
-        //  Mensaje de confirmacion del proceso y terminar el flujo diciendo que continue el proceso en el dispositivo de origen
-        <div className="flex flex-col items-center justify-center gap-4">
-          <h1 className="text-3xl text-primary font-bold">
-            Validación de Identidad
-          </h1>
-          <h2 className="text-lg text-primary-text font-semibold">
-            Por favor, completa el proceso en el dispositivo de origen.
-          </h2>
-          <p className="text-sm text-primary-text">
-            Si no puedes continuar, por favor contacta a soporte.
-          </p>
-        </div>
+      ) : (
+        session && (
+          <div className="flex flex-col items-center justify-center gap-6 md:py-6">
+            <h1 className="text-3xl text-primary font-bold text-center">
+              Sesión Activa
+            </h1>
+
+            <div className="flex justify-center items-center my-8">
+              <div className="bg-accent/40 rounded-full p-10 shadow-md transition-all duration-300 hover:scale-105">
+                <IoCheckmarkOutline className="text-primary text-8xl animate-pulse" />
+              </div>
+            </div>
+
+            <div className="text-center max-w-md">
+              <h2 className="text-2xl text-primary-text font-semibold mb-3">
+                Continúa el proceso en el dispositivo original
+              </h2>
+
+              <div className="bg-gray-50 p-5 rounded-lg border border-gray-200 mt-4">
+                <p className="text-primary-text">
+                  Tu proceso de validación de identidad está activo. Regresa al
+                  dispositivo desde donde iniciaste la sesión para completar el
+                  proceso. Ya puedes cerrar esta ventana.
+                </p>
+                <p className="text-sm text-gray-500 mt-4">
+                  Si tienes problemas para continuar, contacta a nuestro equipo
+                  de <a className="underline font-semibold" href="https://pagui.co/">soporte</a>.
+                </p>
+              </div>
+            </div>
+          </div>
+        )
       )}
 
       {status?.type === "error" && (
@@ -135,7 +158,6 @@ function UserValidation() {
       )}
     </Card>
   );
-
 }
 
 export default UserValidation;
