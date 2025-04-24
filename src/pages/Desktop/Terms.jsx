@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "@components/Card";
 import ScrollableText from "@components/ScrollableText";
 import Button from "@components/Button";
@@ -7,6 +7,12 @@ import { Link } from "react-router";
 import { isMobile } from "@/lib/utils/isMobile";
 
 function Terms() {
+  const [hasReadTerms, setHasReadTerms] = useState(false);
+
+  const handleScrollEnd = (reached) => {
+    setHasReadTerms(reached);
+  };
+
   return !isMobile() ? (
     <Card className="max-w-6xl gap-4 flex flex-col items-center shadow-2xl w-2/3">
       <div className="font-semibold flex flex-col items-start justify-start w-full">
@@ -14,16 +20,29 @@ function Terms() {
         <h2 className="text-xl text-secondary-text">Tu acuerdo</h2>
       </div>
       <div className="flex flex-col gap-12">
-        <ScrollableText text={terms} />
+        <ScrollableText text={terms} onScrollEnd={handleScrollEnd} />
         <div className="flex justify-end w-full gap-8">
           <Link to={"/"} aria-label="Decline Terms and Conditions">
             <Button variant="underline" size={"md"} aria-label="Decline">
               Rechazar
             </Button>
           </Link>
-          <Link to={"/didit"} aria-label="Accept Terms and Conditions">
-            <Button variant={"primary"} size={"md"} aria-label="Accept">
-              Continuar
+          <Link
+            to={hasReadTerms ? "/didit" : "#"}
+            aria-label={
+              hasReadTerms
+                ? "Accept Terms and Conditions"
+                : "Read all terms first"
+            }
+          >
+            <Button
+              variant={"primary"}
+              size={"md"}
+              aria-label="Accept"
+              disabled={!hasReadTerms}
+              className={!hasReadTerms ? "opacity-50 cursor-not-allowed" : ""}
+            >
+              {hasReadTerms ? "Continuar" : "Lea todos los términos"}
             </Button>
           </Link>
         </div>
@@ -43,11 +62,25 @@ function Terms() {
       <ScrollableText
         className="shadow-2xl border border-neutral-100 p-2 h-full max-h-2/3"
         text={terms}
+        onScrollEnd={handleScrollEnd}
       />
       <div className="flex justify-around w-full gap-8">
-        <Link to={"/didit"} aria-label="Accept Terms and Conditions">
-          <Button variant={"rounded"} size={"md"} aria-label="Accept">
-            Aceptar & Continuar
+        <Link
+          to={hasReadTerms ? "/didit" : "#"}
+          aria-label={
+            hasReadTerms
+              ? "Accept Terms and Conditions"
+              : "Read all terms first"
+          }
+        >
+          <Button
+            variant={"rounded"}
+            size={"md"}
+            aria-label="Accept"
+            disabled={!hasReadTerms}
+            className={!hasReadTerms ? "opacity-50 cursor-not-allowed" : ""}
+          >
+            {hasReadTerms ? "Aceptar & Continuar" : "Lea todos los términos"}
           </Button>
         </Link>
       </div>
