@@ -117,7 +117,7 @@ function DiditForm() {
       <form onSubmit={handleSubmit} className="space-y-8">
         <div className="grid grid-cols-2 gap-6">
           <InputField
-            label="First Name"
+            label="Primer Nombre"
             type="text"
             id="firstName"
             name="firstName"
@@ -127,7 +127,7 @@ function DiditForm() {
             required
           />
           <InputField
-            label="Last Name"
+            label="Apellido"
             type="text"
             id="lastName"
             name="lastName"
@@ -139,7 +139,7 @@ function DiditForm() {
         </div>
 
         <SelectField
-          label="Document Type"
+          label="Tipo de Documento"
           id="documentType"
           options={documentTypeOptions}
           name="documentType"
@@ -154,7 +154,7 @@ function DiditForm() {
           }}
         />
         <InputField
-          label="Document ID"
+          label="Numero de Documento"
           type="text"
           id="documentId"
           name="documentId"
@@ -197,10 +197,10 @@ function DiditForm() {
                   d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                 ></path>
               </svg>
-              <span>Processing...</span>
+              <span>Procesando...</span>
             </>
           ) : (
-            "Create KYC Session"
+            "Crear Registro"
           )}
         </Button>
       </form>

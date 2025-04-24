@@ -82,11 +82,11 @@ function ValidationForm({ session = {} }) {
           {/* Left column */}
           <div className="flex flex-col gap-4">
             <InputField
-              label="First Name"
+              label="Primer Nombre"
               value={userData.firstName}
               disabled
             />
-            <InputField label="Last Name" value={userData.lastName} disabled />
+            <InputField label="Apellido" value={userData.lastName} disabled />
             <InputField
               label="Document ID"
               value={userData.documentId}
@@ -97,18 +97,18 @@ function ValidationForm({ session = {} }) {
           {/* Right column */}
           <div className="flex flex-col gap-4">
             <InputField
-              label="Nationality"
+              label="Nacionalidad"
               value={userData.nationality}
               disabled
             />
             <SelectField
-              label="Document Type"
+              label="Tipo de Documento"
               options={documentTypeOptions}
               value={userData.documentType}
               disabled
             />
             <InputField
-              label="Date of Birth"
+              label="Fecha de Nacimiento"
               value={userData.dateOfBirth}
               disabled
             />
