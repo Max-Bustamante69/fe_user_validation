@@ -45,7 +45,7 @@ function UserValidation() {
         const res = await response.json();
 
         const sessionData = res.data; // Assuming the response structure is { data: { ... } }
-        if (!sessionData) {
+        if (!sessionData || sessionData == null) {
           setStatus({
             message: "No session data found",
             type: "error",
@@ -58,14 +58,7 @@ function UserValidation() {
 
         const userData = sessionData.kyc;
 
-        if (sessionData == null) {
-          setStatus({
-            message: "No session data found",
-            type: "error",
-          });
-          navigate("/failed");
-          return;
-        }
+
 
         // You can use documentId here as needed
         console.log("Document ID from URL:", documentId);
