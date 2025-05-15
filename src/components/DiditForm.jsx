@@ -105,7 +105,7 @@ function DiditForm() {
       transition={{ duration: 0.3 }}
     >
       {status && status.type === "error" && (
-        <div className="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg">
+        <div className="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg ">
           {status.message}
         </div>
       )}
