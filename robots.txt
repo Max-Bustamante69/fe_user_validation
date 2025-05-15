@@ -29,5 +29,5 @@ Allow: /*.ico$
 # Crawl delay to prevent server overload
 Crawl-delay: 10
 
-# Sitemap location (replace with your actual domain)
-Sitemap: https://yourdomain.com/sitemap.xml
+# Sitemap location
+Sitemap: https://pagui-kyc.vercel.app/sitemap.xml
