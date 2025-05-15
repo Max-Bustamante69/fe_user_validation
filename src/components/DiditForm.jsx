@@ -119,7 +119,7 @@ function DiditForm() {
             name="firstName"
             value={formData.firstName}
             onChange={handleChange}
-            placeholder="John"
+            placeholder="Juan"
             required
           />
           <InputField
@@ -129,7 +129,7 @@ function DiditForm() {
             name="lastName"
             value={formData.lastName}
             onChange={handleChange}
-            placeholder="Doe"
+            placeholder="Rodriguez"
             required
           />
         </div>
@@ -158,7 +158,7 @@ function DiditForm() {
           name="documentId"
           value={formData.documentId}
           onChange={handleChange}
-          placeholder="Enter your document ID"
+          placeholder="Ingresa tu Numero de Documento"
           required
         />
 
