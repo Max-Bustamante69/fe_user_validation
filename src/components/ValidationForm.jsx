@@ -101,9 +101,12 @@ function ValidationForm({ session = {} }) {
             />
             <SelectField
               label="Tipo de Documento"
+              id="documentType"
               options={documentTypeOptions}
               value={userData.documentType}
               disabled
+              aria-label="Tipo de Documento"
+              aria-disabled="true"
             />
             <InputField
               label="Fecha de Nacimiento"

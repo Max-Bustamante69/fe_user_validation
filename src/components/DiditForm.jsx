@@ -142,6 +142,8 @@ function DiditForm() {
           value={formData.documentType}
           onChange={handleChange}
           required
+          aria-label="Tipo de Documento"
+          aria-required="true"
           style={{
             backgroundImage:
               'url(\'data:image/svg+xml;charset=US-ASCII,<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z" fill="%236B7280"/></svg>\')',
