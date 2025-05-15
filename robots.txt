@@ -1,8 +1,33 @@
+# Allow all crawlers
 User-agent: *
+Allow: /
+
+# Disallow sensitive directories and files
 Disallow: /node_modules/
 Disallow: /dist/
 Disallow: /dist-ssr/
 Disallow: /*.log
 Disallow: /*.local
-Allow: /
+Disallow: /api/
+Disallow: /private/
+Disallow: /admin/
+Disallow: /temp/
+Disallow: /tmp/
+Disallow: /*.json$
+Disallow: /*.js$
+Disallow: /*.css$
+
+# Allow specific file types
+Allow: /*.html$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.ico$
+
+# Crawl delay to prevent server overload
+Crawl-delay: 10
+
+# Sitemap location (replace with your actual domain)
 Sitemap: https://yourdomain.com/sitemap.xml
