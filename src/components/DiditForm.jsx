@@ -22,9 +22,6 @@ function DiditForm() {
   const [status, setStatus] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
-
- 
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -44,14 +41,14 @@ function DiditForm() {
       !formData.documentType
     ) {
       setStatus({
-        message: "Please fill in all required fields",
+        message: "Por favor complete todos los campos requeridos",
         type: "error",
       });
       return;
     }
 
     setIsLoading(true);
-    setStatus({ message: "Processing request...", type: "processing" });
+    setStatus({ message: "Procesando solicitud...", type: "processing" });
 
     const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
     const endpointUrl = `${BACKEND_URL}/kyc/api/kyc/`;
@@ -79,13 +76,12 @@ function DiditForm() {
 
       const sessionData = await response.json();
 
-
       setDeviceAsOrigin(true); // Set device as origin
       window.location.href = sessionData.verification_url;
     } catch (error) {
       console.error("KYC session creation failed:", error);
       setStatus({
-        message: error.message || "Failed to create KYC session",
+        message: error.message || "Error al crear la sesión de validación",
         type: "error",
       });
       setIsLoading(false);
@@ -163,7 +159,6 @@ function DiditForm() {
           placeholder="Enter your document ID"
           required
         />
-
 
         <Button
           variant="primary"

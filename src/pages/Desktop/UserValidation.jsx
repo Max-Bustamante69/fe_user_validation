@@ -58,8 +58,6 @@ function UserValidation() {
 
         const userData = sessionData.kyc;
 
-
-
         // You can use documentId here as needed
         console.log("Document ID from URL:", documentId);
 
@@ -104,7 +102,7 @@ function UserValidation() {
         <>
           <div>
             <h1 className="text-3xl text-primary font-bold">
-              Formulario de Validacion
+              Formulario de Validación
             </h1>
             <h2 className="text-lg text-primary-text font-semibold">
               Valida tu identidad
@@ -138,7 +136,14 @@ function UserValidation() {
                 </p>
                 <p className="text-sm text-gray-500 mt-4">
                   Si tienes problemas para continuar, contacta a nuestro equipo
-                  de <a className="underline font-semibold" href="https://pagui.co/">soporte</a>.
+                  de{" "}
+                  <a
+                    className="underline font-semibold"
+                    href="https://pagui.co/"
+                  >
+                    soporte
+                  </a>
+                  .
                 </p>
               </div>
             </div>

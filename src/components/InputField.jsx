@@ -10,7 +10,7 @@ const InputField = ({ label, type, placeholder, value ,...props}) => {
         type={type}
         placeholder={placeholder}
         value={value}
-        className="w-full font-semibold  p-2 mt-1 border border-gray-300 disabled:text-neutral-600 disabled:cursor-not-allowed disabled:bg-gray-100"
+        className="w-full font-semibold  p-2 mt-1 border border-gray-300 placeholder:text-placeholder-text disabled:text-neutral-600 disabled:cursor-not-allowed disabled:bg-gray-100"
         {...props}
       />
     </div>

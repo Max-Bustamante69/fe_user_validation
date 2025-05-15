@@ -44,9 +44,9 @@ const spinnerSizes = {
 //   --color-accent: #ea5865;
 //   --color-primary-text: #1e1e1c;
 //   --color-secondary-text: #253058;
-//   --color-placeholder-text:#7A7F93; 
+//   --color-placeholder-text:#7A7F93;
 //   --color-drop-shadow: #E3EBFB;
-//   --color-highlight-text:#D23643; 
+//   --color-highlight-text:#D23643;
 //   --font-poppins: Poppins, sans-serif;
 // Color mappings (using your color palette)
 const spinnerColors = {
@@ -61,7 +61,7 @@ const Loader = ({
   type = "clip",
   size = "md",
   variant = "default",
-  text = "Loading...",
+  text = "Cargando...",
   showText = true,
   className = "",
   spinner = "default",

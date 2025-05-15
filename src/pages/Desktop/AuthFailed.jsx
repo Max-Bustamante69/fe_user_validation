@@ -1,21 +1,19 @@
-import React from 'react'
-import Button from '@components/Button'
-import { MdNavigateBefore } from 'react-icons/md'
+import React from "react";
+import Button from "@components/Button";
+import { MdNavigateBefore } from "react-icons/md";
 import { FaHouse } from "react-icons/fa6";
-import { Link } from 'react-router'
-import { isMobile } from '@/lib/utils/isMobile'
-
-
+import { Link } from "react-router";
+import { isMobile } from "@/lib/utils/isMobile";
 
 function AuthFailed() {
   return (
     <>
       <div className=" flex flex-col gap-2 items-center text-center">
         <h1 className="text-2xl lg:text-3xl text-primary font-bold">
-          ALGO SALIO MAL...
+          ALGO SALIÓ MAL...
         </h1>
         <h2 className="text-xl lg:text-2xl text-secondary-text font-light">
-          No eres tu? contacta el soporte tecnico de pagui
+          ¿No eres tú? Contacta al soporte técnico de Pagui
         </h2>
       </div>
       <div className="flex w-full justify-between items-center absolute lg:relative bottom-0">
@@ -34,7 +32,7 @@ function AuthFailed() {
           aria-label="Contact Technical Support"
         >
           <Button variant={"underline"} aria-label="Soporte">
-            SOPORTE TECNICO
+            SOPORTE TÉCNICO
           </Button>
         </Link>
         <Link to={"/"} aria-label="Go to Home Page">
@@ -51,4 +49,4 @@ function AuthFailed() {
   );
 }
 
-export default AuthFailed
+export default AuthFailed;

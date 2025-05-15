@@ -65,8 +65,6 @@ function ValidationForm({ session = {} }) {
           });
       };
 
-
-
       if (isValid) {
         handleAcceptance(sessionId);
       } else {
@@ -88,7 +86,7 @@ function ValidationForm({ session = {} }) {
             />
             <InputField label="Apellido" value={userData.lastName} disabled />
             <InputField
-              label="Document ID"
+              label="Número de Documento"
               value={userData.documentId}
               disabled
             />

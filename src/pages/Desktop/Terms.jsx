@@ -16,7 +16,7 @@ function Terms() {
   return !isMobile() ? (
     <Card className="max-w-6xl gap-4 flex flex-col items-center shadow-2xl w-2/3">
       <div className="font-semibold flex flex-col items-start justify-start w-full">
-        <h1 className="text-3xl text-accent">Terminos & Condiciones</h1>
+        <h1 className="text-3xl text-accent">Términos y Condiciones</h1>
         <h2 className="text-xl text-secondary-text">Tu acuerdo</h2>
       </div>
       <div className="flex flex-col gap-12">
@@ -42,7 +42,7 @@ function Terms() {
               disabled={!hasReadTerms}
               className={!hasReadTerms ? "opacity-50 cursor-not-allowed" : ""}
             >
-              {hasReadTerms ? "Continuar" : "Lea todos los términos"}
+              {hasReadTerms ? "Continuar" : "Leer todos los términos"}
             </Button>
           </Link>
         </div>
