@@ -1,4 +1,3 @@
-# Allow all crawlers
 User-agent: *
 Allow: /
 
@@ -30,4 +29,4 @@ Allow: /*.ico$
 Crawl-delay: 10
 
 # Sitemap location
-Sitemap: https://pagui-kyc.vercel.app/sitemap.xml
+Sitemap: https://pagui-kyc.vercel.app/sitemap.xml 
