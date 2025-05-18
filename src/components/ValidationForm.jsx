@@ -7,10 +7,11 @@ import { Link } from "react-router";
 import { useEffect } from "react";
 import { useAuth } from "@/contexts/AuthContext";
 import { useState } from "react";
+import { authFetch } from "@/lib/api";
 
 function ValidationForm({ session = {} }) {
   const [isValid, setIsValid] = useState(null);
-  const { authFetch } = useAuth(); // Use the auth context
+  const { isOriginDevice } = useAuth();
 
   // Animation configuration
   const animationConfig = {
@@ -35,43 +36,40 @@ function ValidationForm({ session = {} }) {
       const sessionId = session?.session_id;
       const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
       const endpointUrl = `${BACKEND_URL}/kyc/api/session/${sessionId}/resolve/`;
-      const handleRejection = () => {
-        const options = {
-          method: "DELETE",
-        };
-        authFetch(endpointUrl, options)
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error("Failed to reject the user");
-            }
-          })
-          .catch((error) => {
-            console.error("Error rejecting user:", error);
+
+      const handleRejection = async () => {
+        try {
+          const response = await authFetch(endpointUrl, {
+            method: "DELETE",
           });
+          if (!response.ok) {
+            throw new Error("Failed to reject the user");
+          }
+        } catch (error) {
+          console.error("Error rejecting user:", error);
+        }
       };
 
-      const handleAcceptance = () => {
-        const options = {
-          method: "PATCH",
-        };
-        authFetch(endpointUrl, options)
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error("Failed to accept the user");
-            }
-          })
-          .catch((error) => {
-            console.error("Error accepting user:", error);
+      const handleAcceptance = async () => {
+        try {
+          const response = await authFetch(endpointUrl, {
+            method: "PATCH",
           });
+          if (!response.ok) {
+            throw new Error("Failed to accept the user");
+          }
+        } catch (error) {
+          console.error("Error accepting user:", error);
+        }
       };
 
       if (isValid) {
-        handleAcceptance(sessionId);
+        handleAcceptance();
       } else {
-        handleRejection(sessionId);
+        handleRejection();
       }
     }
-  }, [isValid]);
+  }, [isValid, session?.session_id]);
 
   return (
     <motion.div {...animationConfig}>

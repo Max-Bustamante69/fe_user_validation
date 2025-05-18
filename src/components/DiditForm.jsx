@@ -4,11 +4,12 @@ import { motion } from "framer-motion";
 import InputField from "./InputField";
 import Button from "./Button";
 import SelectField from "./SelectField";
-import { useAuth } from "../contexts/AuthContext"; // Import the auth context
+import { useAuth } from "../contexts/AuthContext";
 import Loader from "./Loader";
+import { authFetch } from "@/lib/api";
 
 function DiditForm() {
-  const { authFetch, isLoading: authLoading, setDeviceAsOrigin } = useAuth(); // Use the auth context
+  const { isLoading: authLoading, setDeviceAsOrigin } = useAuth();
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -52,7 +53,6 @@ function DiditForm() {
     const endpointUrl = `${BACKEND_URL}/kyc/api/kyc/`;
 
     try {
-      // This endpoint doesn't require auth but we use authFetch for consistency
       const response = await authFetch(endpointUrl, {
         method: "POST",
         headers: {

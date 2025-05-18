@@ -1,9 +1,9 @@
-import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
 // Base fetch function with auth
-const authFetch = async (url, options = {}) => {
+export const authFetch = async (url, options = {}) => {
   const token = localStorage.getItem("access_token");
   const headers = {
     ...options.headers,

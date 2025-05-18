@@ -3,7 +3,7 @@ import fail from "@/assets/pagui-fail.svg";
 import { motion } from "framer-motion";
 import { Outlet } from "react-router";
 
-function ErrorLayout({children}) {
+function ErrorLayout({ children }) {
   return (
     <motion.div
       className="flex flex-col items-center h-full justify-center lg:h-fit gap-12 relative w-full"
@@ -13,7 +13,7 @@ function ErrorLayout({children}) {
       transition={{ duration: 0.3 }}
     >
       <img src={fail} alt="Process Failed" />
-      <Outlet/>
+      <Outlet />
       {children}
     </motion.div>
   );

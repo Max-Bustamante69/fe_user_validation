@@ -16,26 +16,35 @@ function Home() {
       transition={{ duration: 0.3 }}
     >
       <div className="flex flex-col items-center justify-around gap-12 w-full max-w-sm">
-        <img className="lg:hidden max-w-3/4 w-full" src={mobileSvg} alt="" width="300" height="300" />
+        <img
+          className="lg:hidden max-w-3/4 w-full"
+          src={mobileSvg}
+          alt=""
+          width="300"
+          height="300"
+        />
         <div>
-        <h1 className="text-2xl lg:text-3xl font-bold text-primary mb-2 tracking-tight">
-          
-          Bienvenido a la Experiencia Pagui
-        </h1>
-        {isMobile() ? (
-          <p className="text-lg lg:text-xl text-primary-text text-start mb-4">
-            Pagui es el mejor canal para facilitar tus compras de manera ágil, sencilla y segura a través de WhatsApp.
-          </p>
-        ) : (
-          <>
-            <p className="text-xl text-primary-text text-start mb-4">
-              Verifica desde WhatsApp cuándo recibes pagos por QR, transferencias ó llaves, sin la necesidad de entrar al banco.
+          <h1 className="text-2xl lg:text-3xl font-bold text-primary mb-2 tracking-tight">
+            Bienvenido a la Experiencia Pagui
+          </h1>
+          {isMobile() ? (
+            <p className="text-lg lg:text-xl text-primary-text text-start mb-4">
+              Pagui es el mejor canal para facilitar tus compras de manera ágil,
+              sencilla y segura a través de WhatsApp.
             </p>
-            <p className="text-xl text-primary-text text-start">
-              Olvídate de tomarle fotos a capturas de pantalla, tus vendedores podrán confirmar las ventas en tiempo real a través de WhatsApp de manera segura.
-            </p>
-          </>
-        )}
+          ) : (
+            <>
+              <p className="text-xl text-primary-text text-start mb-4">
+                Verifica desde WhatsApp cuándo recibes pagos por QR,
+                transferencias ó llaves, sin la necesidad de entrar al banco.
+              </p>
+              <p className="text-xl text-primary-text text-start">
+                Olvídate de tomarle fotos a capturas de pantalla, tus vendedores
+                podrán confirmar las ventas en tiempo real a través de WhatsApp
+                de manera segura.
+              </p>
+            </>
+          )}
         </div>
       </div>
 
@@ -44,13 +53,16 @@ function Home() {
           <Card className="justify-center items-center bg-white w-full shadow-xl p-6 ">
             <ul className="text-lg flex flex-col text-secondary-text justify-center gap-4 list-disc">
               <li className="mb-4">
-                Otorga acceso restringido a tus vendedores para confirmar cada venta sin necesidad de compartir información de tus cuentas bancarias.
+                Otorga acceso restringido a tus vendedores para confirmar cada
+                venta sin necesidad de compartir información de tus cuentas
+                bancarias.
               </li>
               <li className="mb-4">
                 Agiliza la confirmación de pagos de tus compradores.
               </li>
               <li className="mb-4">
-                Concilia de forma fácil los ingresos en el banco con tus facturas.
+                Concilia de forma fácil los ingresos en el banco con tus
+                facturas.
               </li>
               <li className="mb-4">
                 Evita aceptar comprobantes falsos de pagos.
@@ -58,14 +70,26 @@ function Home() {
             </ul>
           </Card>
           <Link to={"/terms"} aria-label="Read Terms and Conditions">
-            <Button variant={"rounded"} size={isMobile() ? "roundMd" : "roundLg"} aria-label="Next">
+            <Button
+              variant={"rounded"}
+              size={isMobile() ? "roundMd" : "roundLg"}
+              aria-label="Next"
+            >
               <MdNavigateNext className="w-8 h-8" />
             </Button>
           </Link>
         </div>
       ) : (
-        <Link className="w-full flex justify-end absolute bottom-0" to={"/terms"} aria-label="Read Terms and Conditions">
-          <Button variant={"rounded"} size={isMobile() ? "roundMd" : "roundLg"} aria-label="Next">
+        <Link
+          className="w-full flex justify-end absolute bottom-0"
+          to={"/terms"}
+          aria-label="Read Terms and Conditions"
+        >
+          <Button
+            variant={"rounded"}
+            size={isMobile() ? "roundMd" : "roundLg"}
+            aria-label="Next"
+          >
             <MdNavigateNext className="w-8 h-8" />
           </Button>
         </Link>
