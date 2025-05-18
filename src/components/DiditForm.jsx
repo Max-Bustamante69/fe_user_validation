@@ -1,15 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { documentTypeOptions } from "../lib/utils/constants";
 import { motion } from "framer-motion";
 import InputField from "./InputField";
 import Button from "./Button";
 import SelectField from "./SelectField";
-import { useNavigate } from "react-router";
 import { useAuth } from "../contexts/AuthContext"; // Import the auth context
 import Loader from "./Loader";
 
 function DiditForm() {
-  const navigate = useNavigate();
   const { authFetch, isLoading: authLoading, setDeviceAsOrigin } = useAuth(); // Use the auth context
 
   const [formData, setFormData] = useState({
