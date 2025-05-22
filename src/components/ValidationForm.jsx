@@ -11,7 +11,7 @@ import { authFetch } from "@/lib/api";
 
 function ValidationForm({ session = {} }) {
   const [isValid, setIsValid] = useState(null);
-  const { isOriginDevice } = useAuth();
+
 
   // Animation configuration
   const animationConfig = {
@@ -23,12 +23,12 @@ function ValidationForm({ session = {} }) {
 
   // Safely access user properties with fallbacks to empty string
   const userData = {
-    firstName: session?.first_name || "",
-    lastName: session?.last_name || "",
-    documentId: session?.personal_number || session?.document_number || "",
-    nationality: session?.issuing_state_name || "",
-    documentType: session?.document_type || "",
-    dateOfBirth: session?.date_of_birth || "",
+    firstName: session?.kyc?.first_name || "",
+    lastName: session?.kyc?.last_name || "",
+    documentId: session?.kyc?.personal_number || session?.kyc?.document_number || "",
+    nationality: session?.kyc?.issuing_state_name || "",
+    documentType: session?.kyc?.document_type || "",
+    dateOfBirth: session?.kyc?.date_of_birth || "",
   };
 
   useEffect(() => {

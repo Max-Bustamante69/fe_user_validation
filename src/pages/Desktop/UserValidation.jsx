@@ -1,5 +1,5 @@
 // UserValidation.jsx
-import React from "react";
+import React, { useEffect } from "react";
 import ValidationForm from "@/components/ValidationForm";
 import Card from "@/components/Card";
 import { useAuth } from "@/contexts/AuthContext";
@@ -15,13 +15,18 @@ function UserValidation() {
   const { isOriginDevice } = useAuth();
   const { data: session, isLoading, error } = useSessionData(documentId);
 
-  if (error) {
-    navigate("/failed");
-    return null;
-  }
+  useEffect(() => {
+    if (error) {
+      navigate("/failed");
+    }
+  }, [error, navigate]);
 
   if (isLoading) {
     return <Loader />;
+  }
+
+  if (error) {
+    return null;
   }
 
   return (
